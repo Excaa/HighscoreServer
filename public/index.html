@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>7h game jam highscore server</title>
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, user-scalable=no" />
+	
+	<link rel="stylesheet" type="text/css" media="all" href="css/styles.css" />
+	
+	<script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/newscore.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/list.js"></script>
+	
+
+</head>
+<body ontouchstart="">
+	<div id="submit">
+		<h1>New score</h1>
+		<form>
+			<label for="gameId">Peli :</label>
+			<input id="gameId" type="text" name="game" />
+			
+			
+			<br/>
+			<label for="userName">Nimi :</label>
+			<input id="userName" type="text" name="name" />
+			
+			<br/>
+			<label for="userScore">Pisteet :</label>
+			<input id="userScore" type="number" name="score" />
+			
+			<br/>
+			<input id="submitScore" type="button" value="submit" />
+			
+			
+		</form>
+		<div id="submitLog"></div>
+	</div>
+	
+	<div>
+		<h1>Show scores</h1>
+		<input type="text" name="gameId" id="listGameName"/>
+		<input id="listUpdate" type="button" value="Update"/>
+		<ol id="scores">
+			
+		</ol>
+	</div>
+</body>
+</html>

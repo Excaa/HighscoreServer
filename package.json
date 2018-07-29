@@ -1,0 +1,19 @@
+{
+  "name": "7hjam_highscore",
+  "version": "1.0.0",
+  "description": "Highscore server for 7h jam games",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Henri Sarasvirta",
+  "license": "MIT license",
+  "dependencies": {
+    "co": "^4.6.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "helmet": "^3.11.0",
+    "mongodb": "^3.1.1"
+  }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" charset="utf-8" src="src/HighScore.js"></script>
+	<script type="text/javascript" charset="utf-8" src="lib/jquery.min.js"></script>
+</head>
+<body>
+<div id="submit">
+		<h1>New score</h1>
+		<form>
+			<label for="userName">name :</label>
+			<input id="userName" type="text" name="name" />
+			
+			<br/>
+			<label for="userScore">scores :</label>
+			<input id="userScore" type="number" name="score" />
+			
+			<br/>
+			<input id="submitScore" type="button" value="submit" />
+			
+			
+		</form>
+		<div id="submitLog"></div>
+	</div>
+	
+	<div>
+		<h1>Show scores</h1>
+		<input id="listUpdate" type="button" value="Update"/>
+		<ol id="scores">
+			
+		</ol>
+	</div>
+	
+<script>
+	var hs = new jam.HighScore("skyhigh");
+	$("#listUpdate").click( ()=>{
+		hs.list().then((data)=>{
+			$("#scores li").remove();
+			let out = "";
+			for( let i = 0; i < data.scores.length; i++)
+			{
+				const s = data.scores[i];
+				out+= "<li>"+s.user+":"+s.score+"</li>";
+			}
+			$("#scores").append(out);
+		}).catch((err)=>{
+			console.log(err);
+		});
+	});
+	
+	$("#submitScore").click( ()=>{
+		hs.submit($("#userName").val(), $("#userScore").val() ).then((data)=>{
+			console.log("Submit ok.");
+			$("#listUpdate").click();
+		}).catch((err)=>{
+			console.log(err);
+		});
+	});
+	
+	
+</script>
+</body>
+</html>
