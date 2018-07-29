@@ -1,5 +1,6 @@
 # HighscoreServer
 Simple highscore server made for 7h jam.
+Backend done with mongoDB.
 
 #Usage
 Run 'npm install' to install the required node modules.
